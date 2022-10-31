@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/question_mark"
+    tools:context=".QuizResults">
+
+    <ImageView
+        android:id="@+id/congratulationsIcon"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="9dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/congrats" />
+    
+    <TextView
+        android:background="@drawable/white_stroke"
+        android:id="@+id/successTextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@+id/congratulationsIcon"
+        android:text="Testi Başarıyla Tamamladın!"
+        android:textColor="#FF9800"
+        android:textSize="25dp"
+        android:fontFamily="@font/semibold"
+        android:layout_height="wrap_content"/>
+    
+    <LinearLayout
+        android:background="@drawable/white_stroke"
+        android:layout_below="@+id/successTextView"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/correctAnswers"
+            android:textColor="#4CAF50"
+            android:text="Doğru Cevap Sayısı: 0"
+            android:textSize="20dp"
+            android:fontFamily="@font/semibold"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/incorrectAnswers"
+            android:layout_marginTop="5dp"
+            android:textColor="#F44336"
+            android:text="Yanlış Cevap Sayısı: 0"
+            android:textSize="20dp"
+            android:fontFamily="@font/semibold"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startNewQuizBtn"
+        android:layout_width="match_parent"
+        android:text="Yeni Teste Başla"
+        android:textColor="#FFC107"
+        android:fontFamily="@font/semibold"
+        android:textSize="20dp"
+        android:background="@drawable/white_stroke2"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:layout_height="50dp"/>
+
+</RelativeLayout>
