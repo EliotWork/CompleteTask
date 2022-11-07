@@ -1,39 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.basakkandemir.quizmasters">
+    package="com.completetaskapp.pksq">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:name="com.completetaskapp.pksq.App"
         android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.QuizMasters"
-        tools:targetApi="31">
-        <activity
-            android:name=".QuizResults"
-            android:exported="false" />
-        <activity
-            android:name=".QuizActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".IntroActivity"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/CompleteTaskTheme"
+        android:allowBackup="true"
+        android:supportsRtl="true">
+
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
+        <receiver android:name="com.appsflyer.SingleInstallBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.completetaskapp.pksq.ui.CompleteTaskActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.App.Starting"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/app_scheme"/>
+            </intent-filter>
+
         </activity>
+
+        <activity
+            android:name="com.completetaskapp.pksq.QuizResults"
+            android:theme="@style/Theme.QuizMasters"
+            android:exported="false" />
+        <activity
+            android:name="com.completetaskapp.pksq.QuizActivity"
+            android:theme="@style/Theme.QuizMasters"
+            android:exported="false" />
+        <activity
+            android:name="com.completetaskapp.pksq.MainActivity"
+            android:theme="@style/Theme.QuizMasters"
+            android:exported="true"/>
+
     </application>
 
 </manifest>

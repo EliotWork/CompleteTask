@@ -17,19 +17,19 @@
         android:layout_marginEnd="9dp"
         android:adjustViewBounds="true"
         android:src="@drawable/congrats" />
-    
+
     <TextView
-        android:background="@drawable/white_stroke"
         android:id="@+id/successTextView"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/congratulationsIcon"
-        android:text="Testi Başarıyla Tamamladın!"
-        android:textColor="#FF9800"
-        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/white_stroke"
         android:fontFamily="@font/semibold"
-        android:layout_height="wrap_content"/>
+        android:gravity="center"
+        android:text="You Have Successfully Completed the Test!"
+        android:textColor="#FF9800"
+        android:textSize="25dp" />
     
     <LinearLayout
         android:background="@drawable/white_stroke"
@@ -40,36 +40,39 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/correctAnswers"
-            android:textColor="#4CAF50"
-            android:text="Doğru Cevap Sayısı: 0"
-            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/semibold"
-            android:layout_height="wrap_content"/>
+            android:text="Number of Correct Answers: 0"
+            android:textColor="#4CAF50"
+            android:textSize="20dp" />
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/incorrectAnswers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:textColor="#F44336"
-            android:text="Yanlış Cevap Sayısı: 0"
-            android:textSize="20dp"
             android:fontFamily="@font/semibold"
-            android:layout_height="wrap_content"/>
+            android:text="Number of Incorrect Answers: 0"
+            android:textColor="#F44336"
+            android:textSize="20dp" />
 
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/startNewQuizBtn"
         android:layout_width="match_parent"
-        android:text="Yeni Teste Başla"
-        android:textColor="#FFC107"
-        android:fontFamily="@font/semibold"
-        android:textSize="20dp"
-        android:background="@drawable/white_stroke2"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:layout_height="50dp"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/white_stroke2"
+        android:fontFamily="@font/semibold"
+        android:text="Start new test"
+        android:textColor="#FFC107"
+        android:textSize="20dp" />
 
 </RelativeLayout>

@@ -46,15 +46,16 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/art_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Sanat"
                 android:fontFamily="@font/semibold"
+                android:text="Art"
                 android:textColor="#000000"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/eglence_layout"
@@ -71,15 +72,16 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/eglence_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Eğlence"
                 android:fontFamily="@font/semibold"
+                android:text="Fun"
                 android:textColor="#000000"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
@@ -108,15 +110,16 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/spor_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Spor"
                 android:fontFamily="@font/semibold"
+                android:text="Sport"
                 android:textColor="#000000"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/science_layout"
@@ -133,30 +136,31 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/science_icon" />
+
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Bilim"
                 android:fontFamily="@font/semibold"
+                android:text="Science"
                 android:textColor="#000000"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/start_btn"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/layout2"
-        android:text="Başla"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/start_btn"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"
         android:fontFamily="@font/semibold"
-        android:layout_height="wrap_content"/>
+        android:text="Start"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
 
 </RelativeLayout>

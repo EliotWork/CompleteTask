@@ -1,12 +1,25 @@
 plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'io.michaelrocks.paranoid'
+    id 'com.google.gms.google-services'
+    id 'kotlin-android'
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\Eliot\\Desktop\\Complete Task\\key.jks')
+            storePassword 'completetaskapp'
+            keyPassword 'completetaskapp'
+            keyAlias 'key0'
+        }
+    }
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.basakkandemir.quizmasters"
+        applicationId "com.completetaskapp.pksq"
         minSdk 23
         targetSdk 32
         versionCode 1
@@ -16,14 +29,31 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.3.1"
     }
 }
 
@@ -35,4 +65,25 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+
+    implementation "androidx.core:core-splashscreen:1.0.0"
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.onesignal:OneSignal:4.7.4'
+    implementation 'com.facebook.android:facebook-android-sdk:12.3.0'   // не обновлять
+    implementation 'com.appsflyer:af-android-sdk:6.6.1'                 // не обновлять
+    implementation "androidx.security:security-crypto:1.0.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    implementation 'androidx.core:core-ktx:1.8.0' // для обновление нужен sdk 33
+    implementation 'com.android.volley:volley:1.2.1'
+
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation"androidx.navigation:navigation-compose:2.5.2"
 }
